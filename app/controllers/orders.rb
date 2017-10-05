@@ -1,3 +1,8 @@
+get "/orders" do
+  @orders = Order.all
+  erb :"orders/index"
+end
+
 get "/orders/new" do
   @order = Order.new
   erb :"orders/new"
@@ -12,7 +17,8 @@ post "/orders" do
   @empanadas << OrderedEmpanada.create(empanada_type_id: 5, quantity: params[:nutella])
 
   @order = Order.new(eater: current_user, ordered_empanadas: @empanadas, paid: false, payment_type: params[:payment_type], delivery_date: params[:date].to_date)
-  p @order.delivery_date
-  p @order.save
+  @order.save
   redirect "/users/#{current_user.id}"
 end
+
+

@@ -2,6 +2,14 @@
 
 <h4><%= @user.name %>'s Emapanada Orders</h4>
 
+<% if logged_in? && master? %>
+<div>
+  <form method="get" action="/orders">
+    <button>Empanada Master Stats</button>
+  </form>
+</div>
+<% end %>
+
 <% if @user.orders.any? %>
 <div class="orders">
   <% @user.orders.each do |order|%>

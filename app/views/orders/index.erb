@@ -1,0 +1,14 @@
+<ul>
+<% @orders.each do |order| %>
+  <li><a href="/users/<%= order.eater.id %>"><%= order.eater.name %></a></li>
+  <li><%= order.paid %></li>
+  <li><%= order.payment_type %></li>
+  <li><%= order.delivery_date %></li>
+  <li><%= order.total %></li>
+  <p>+++++++++++++++</p>
+<% end %>
+</ul>
+
+
+
+

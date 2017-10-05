@@ -3,6 +3,7 @@ EmpanadaType.destroy_all
 Order.destroy_all
 OrderedEmpanada.destroy_all
 
+master = User.create!(name: "Empanada Master", username: "empanadamaster", email: "toby.email", password: "master")
 alyssa = User.create!(name: "Alyssa", username: "alyssa", email: "alyssa.email", password: "123456")
 graham = User.create!(name: "Graham", username: "graham", email: "graham.email", password: "123456")
 avner = User.create!(name: "Avner", username: "avner", email: "avner.email", password: "123456")
