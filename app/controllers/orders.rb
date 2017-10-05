@@ -5,12 +5,11 @@ end
 
 post "/orders" do
   @empanadas = []
-p params
-@empanadas << OrderedEmpanada.create(empanada_type_id: 1, quantity: params[:beef])
-@empanadas << OrderedEmpanada.create(empanada_type_id: 2, quantity: params[:malbec_beef])
-@empanadas << OrderedEmpanada.create(empanada_type_id: 3, quantity: params[:spinach])
-@empanadas << OrderedEmpanada.create(empanada_type_id: 4, quantity: params[:corn])
-@empanadas << OrderedEmpanada.create(empanada_type_id: 5, quantity: params[:nutella])
+  @empanadas << OrderedEmpanada.create(empanada_type_id: 1, quantity: params[:beef])
+  @empanadas << OrderedEmpanada.create(empanada_type_id: 2, quantity: params[:malbec_beef])
+  @empanadas << OrderedEmpanada.create(empanada_type_id: 3, quantity: params[:spinach])
+  @empanadas << OrderedEmpanada.create(empanada_type_id: 4, quantity: params[:corn])
+  @empanadas << OrderedEmpanada.create(empanada_type_id: 5, quantity: params[:nutella])
 
   @order = Order.new(eater: current_user, ordered_empanadas: @empanadas, paid: false, payment_type: params[:payment_type], delivery_date: params[:date].to_date)
   p @order.delivery_date

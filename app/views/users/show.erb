@@ -14,7 +14,9 @@
   <% end %>
   <ul>
     <% order.ordered_empanadas.each do |ordered_empanada|%>
+      <% if ordered_empanada.quantity %>
     <li><%= ordered_empanada.quantity %> <%= ordered_empanada.name %> empanadas</li>
+      <% end %>
     <% end %>
   </ul>
   <% end %>
