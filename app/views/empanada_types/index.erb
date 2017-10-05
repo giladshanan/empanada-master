@@ -1,6 +1,11 @@
 <ul>
 <% @empanada_types.each do |empanada_type| %>
-  <li><%= empanada_type.order.eater.name %>, <%= empanada_type.name %></li>
+  <li><%= empanada_type.name %></li>
 <% end %>
 </ul>
 
+<% if logged_in? %>
+  <form method="get" action="/orders/new">
+    <button>Place an order</button>
+  </form>
+<% end %>

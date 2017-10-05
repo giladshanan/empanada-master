@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   include BCrypt
 
   has_many :orders, foreign_key: :eater_id
-  has_many :empanadas, through: :orders
+  has_many :ordered_empanadas, through: :orders
 
   validates :username, :name, presence: true
   validate :validate_password

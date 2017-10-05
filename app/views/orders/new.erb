@@ -1,13 +1,61 @@
+<h1>Treat yourself to an empanada - or 5!</h1>
+<h2>Just $4 each</h2>
 <form method="POST" action="/orders">
-  <label>Beef:</label>
-   <input id="beef" type="text" name="order[1]" placeholder="How many?"><br>
-   <label>Malbec Beef:</label>
-   <input id="malbec_beef" type="text" name="order[2]" placeholder="How many?"><br>
-   <label>Spinach:</label>
-   <input id="spinach" type="text" name="order[3]" placeholder="How many?"><br>
-   <label>Corn:</label>
-   <input id="corn" type="text" name="order[4]" placeholder="How many?"><br>
-   <label>Nutella:</label>
-   <input id="nutella" type="text" name="order[5]" placeholder="How many?"><br>
-   <input type="submit" value="Submit Order">
+   <p><label>Empanda Delivery Date:</label>
+      <select name="date">
+         <option>October 6</option>
+         <option>October 13</option>
+         <option>October 20</option>
+         <option>October 27</option>
+         <option>November 3</option>
+         <option>November 10</option>
+         <option>November 17</option>
+      </select></p>
+   <p><label>Payment Type:</label>
+      <select name="payment_type">
+         <option>Cash</option>
+         <option>Venmo</option>
+         <option>PayPal</option>
+      </select></p>
+  <p><label>Beef:</label>
+   <select name="beef">
+      <option value="">0</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+   </select></p>
+   <p><label>Malbec Beef:</label>
+   <select name="malbec_beef">
+      <option value="">0</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+   </select></p>
+   <p><label>Spinach:</label>
+   <select name="spinach">
+      <option value="">0</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+   </select></p>
+   <p><label>Corn:</label>
+   <select name="corn">
+      <option value="">0</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+   </select></p>
+   <p><label>Nutella:</label>
+   <select name="nutella">
+      <option value="">0</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+   </select></p>
+ <input type="submit" value="Submit Order">
 </form>

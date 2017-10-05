@@ -1,3 +1,3 @@
 class EmpanadaType < ActiveRecord::Base
-  has_many :empanadas
+  has_many :ordered_empanadas
 end
