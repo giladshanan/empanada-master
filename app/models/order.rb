@@ -1,4 +1,4 @@
-class Order < ActiveRecord::Base
+class Order < ApplicationRecord
   has_many :ordered_empanadas
   has_many :empanada_types, through: :ordered_empanadas
   belongs_to :eater, class_name: :User
@@ -11,18 +11,6 @@ class Order < ActiveRecord::Base
     ordered_empanadas.where(empanada_type_id: "type_id").sum(:quantity)
   end
 
-  def count_all
-    output_hash = {}
-    ordered_empanadas.each do |ordered_empanada|
-      if output_hash[ordered_empanada.name]
-        output_hash[ordered_empanada.name] += ordered_empanada.quantity
-      else
-        output_hash[ordered_empanada.name] = ordered_empanada.quantity
-      end
-    end
-    output_hash
-  end
-
   def type_sum(empanada_type_id)
     ordered_empanadas.where(empanada_type_id: empanada_type_id).sum(:quantity)
   end
@@ -31,4 +19,7 @@ class Order < ActiveRecord::Base
       orders_array_by_date.map { |order| order.type_sum(empanada_type_id) }.reduce(:+)
   end
 
+  def self.count_all(orders_array_by_date)
+    orders_array_by_date.map { |order| order.ordered_empanadas.sum(:quantity) }.reduce(:+)
+  end
 end

@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   include BCrypt
 
   has_many :orders, foreign_key: :eater_id

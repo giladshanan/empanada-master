@@ -23,7 +23,7 @@ namespace :generate do
     puts "Creating #{model_path}"
     File.open(model_path, 'w+') do |f|
       f.write(<<-EOF.strip_heredoc)
-        class #{model_name} < ActiveRecord::Base
+        class #{model_name} < ApplicationRecord
           # Remember to create a migration!
         end
       EOF
@@ -47,7 +47,7 @@ namespace :generate do
     puts "Creating #{path}"
     File.open(path, 'w+') do |f|
       f.write(<<-EOF.strip_heredoc)
-        class #{name} < ActiveRecord::Migration
+        class #{name} < ActiveRecord::Migration[5.1]
           def change
           end
         end
@@ -142,10 +142,10 @@ end
 # In a production environment like Heroku, RSpec might not
 # be available.  To handle this, rescue the LoadError.
 # https://devcenter.heroku.com/articles/getting-started-with-ruby-o#runtime-dependencies-on-development-test-gems
-begin
-  require 'rspec/core/rake_task'
-  RSpec::Core::RakeTask.new(:spec)
-rescue LoadError
-end
+# begin
+#   require 'rspec/core/rake_task'
+#   RSpec::Core::RakeTask.new(:spec)
+# rescue LoadError
+# end
 
-task :default  => :spec
+# task :default  => :spec

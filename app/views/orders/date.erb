@@ -1,18 +1,18 @@
+<h1><%= Order.count_all(@orders) %> Total Empanadas in this Order</h1>
 <% EmpanadaType.all.count.times do |i| %>
-  <h1><%= EmpanadaType.find(i+1).name %></h1>
+  <h2><%= EmpanadaType.find(i+1).name %></h2>
   <h3><%= Order.adder(@orders, i+1) %></h3>
   <p>+++++++++++++++</p>
 <% end %>
 
 
-<!-- <ul>
+<ul>
 <% @orders.each do |order| %>
   <li><%= order.eater.name %></li>
   <li><%= order.paid %></li>
   <li><%= order.payment_type %></li>
   <li><%= order.delivery_date %></li>
   <li><%= order.total %></li>
-  <li><%= order.count_all %></li>
   <p>+++++++++++++++</p>
   <% order.ordered_empanadas.each do |ordered_empanada| %>
   <li><%= ordered_empanada.name %></li>
@@ -25,7 +25,7 @@
   <h3><%= Order.adder(@orders, i+1) %></h3>
   <p>+++++++++++++++</p>
   <% end %>
-</ul> -->
+</ul>
 
 <!-- go through each order from a given date -->
 <!-- go through each ordered empanada and add the quantity to the accumulator -->
