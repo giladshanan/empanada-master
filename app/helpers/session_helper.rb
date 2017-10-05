@@ -17,3 +17,7 @@ end
 def authorized?(user)
   current_user == user
 end
+
+def master?
+  current_user.id == 1
+end

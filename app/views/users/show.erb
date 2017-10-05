@@ -2,12 +2,33 @@
 
 <h4><%= @user.name %>'s Emapanada Orders</h4>
 
+<% if logged_in? && master? %>
+<div>
+  <form method="get" action="/orders">
+    <button>Empanada Master Stats</button>
+  </form>
+</div>
+<% end %>
+
 <% if @user.orders.any? %>
-<ul>
+<div class="orders">
   <% @user.orders.each do |order|%>
-  <li><%= order.name %></li>
+  <h3><%= order.delivery_date %></h3>
+  <p>Total cost: <%= order.total %></p>
+  <% if order.paid %>
+  <p>PAID with <%= order.payment_type %></p>
+  <% else %>
+  <p>Please give the empanada master your money!  Your specified payment type is : <%= order.payment_type %></p>
   <% end %>
-</ul>
+  <ul>
+    <% order.ordered_empanadas.each do |ordered_empanada|%>
+      <% if ordered_empanada.quantity %>
+    <li><%= ordered_empanada.quantity %> <%= ordered_empanada.name %> empanadas</li>
+      <% end %>
+    <% end %>
+  </ul>
+  <% end %>
+</div>
 <% else %>
   <p>This user hasn't ordered any empanadas</p>
 <% end %>

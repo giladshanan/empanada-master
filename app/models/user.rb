@@ -1,8 +1,8 @@
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   include BCrypt
 
   has_many :orders, foreign_key: :eater_id
-  has_many :empanadas, through: :orders
+  has_many :ordered_empanadas, through: :orders
 
   validates :username, :name, presence: true
   validate :validate_password
