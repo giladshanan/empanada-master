@@ -1,4 +1,4 @@
 get '/empanadas' do
-  @empanadas = Empanada.all
+  @empanada_types = EmpanadaType.all
   erb :"empanadas/index"
 end

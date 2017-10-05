@@ -1,4 +1,4 @@
-class Empanada < ActiveRecord::Base
+class OrderedEmpanada < ActiveRecord::Base
   belongs_to :empanada_type
   belongs_to :order
   delegate :name, to: :empanada_type
