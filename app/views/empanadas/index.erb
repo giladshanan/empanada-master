@@ -1,0 +1,6 @@
+<ul>
+<% @empanadas.each do |empanada| %>
+  <li><%= empanada.order.eater.name %>, <%= empanada.name %></li>
+<% end %>
+</ul>
+

@@ -1,0 +1,13 @@
+<h3>Sign Up</h3>
+
+<% if @user.errors.any? %>
+<%= erb :"_errors", locals: {errors: @user.errors} %>
+<% end %>
+
+<form method="POST" action="/users">
+  <input type="text" name="user[name]" placeholder="Name" value="<%= @user.name %>">
+  <input type="text" name="user[username]" placeholder="Username" value="<%= @user.username %>">
+  <input type="text" name="user[email]" placeholder="Email" value="<%= @user.email %>">
+  <input type="password" name="user[password]" placeholder="Password" value="">
+  <input type="submit">
+</form>

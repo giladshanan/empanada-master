@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/application.css">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/js/application.js"></script>
+
+  <title></title>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <h1><a href="/">Empanada Master</a></h1>
+      <img src="/empanadas.jpg" alt="multi-colored empanadas" height="250" width="325">
+      <ul>
+        <% if logged_in? %>
+        <li><a href="/users/<%= current_user.id %>">Hello, <%= current_user.name %></a></li>
+        <li><form method="POST" action="/sessions">
+              <input type="hidden" name="_method" value="DELETE" />
+              <input type="submit" class="button" value="Logout" />
+            </form>
+        </li>
+        <% else %>
+        <li><a href="/sessions/new">Login</a></li>
+        <li><a href="/users/new">Sign Up</a></li>
+        <% end %>
+      </ul>
+    </nav>
+    <div class="main">
+    <%= yield %>
+    </div>
+  </div>
+</body>
+</html>

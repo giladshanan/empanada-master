@@ -1,0 +1,38 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 960px;
+  margin: 20px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+nav li {
+  margin: 5px;
+}
+
+.button {
+  background:none!important;
+  border:none;
+  padding:0!important;
+
+  /*optional*/
+  font-family:arial,sans-serif; /*input has OS specific font-family*/
+  color:#069;
+  text-decoration:underline;
+  cursor:pointer;
+}
