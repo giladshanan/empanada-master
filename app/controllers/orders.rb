@@ -1,6 +1,11 @@
 get "/orders" do
-  @orders = Order.all
+  @orders = Order.all.order("delivery_date")
   erb :"orders/index"
+end
+
+get "/orders/date/:date" do
+  @orders = Order.all.where(delivery_date: params[:date])
+  erb :"orders/date"
 end
 
 get "/orders/new" do
