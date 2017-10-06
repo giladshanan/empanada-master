@@ -32,4 +32,10 @@ post "/orders" do
   redirect "/users/#{current_user.id}"
 end
 
+get "/orders/:id" do
+  @order = Order.find(params[:id])
+  @order.paid = true
+  @order.save
+  redirect "/orders/date/#{@order.delivery_date}"
+end
 

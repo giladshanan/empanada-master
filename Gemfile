@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 ruby '~>2.4.1'
+
 gem 'dotenv'
+gem 'oauth2'
+
 # PostgreSQL driver
 gem 'pg'
 
