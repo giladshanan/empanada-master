@@ -15,8 +15,13 @@ end
 
 post '/orders/notification' do
   tobytime = Party.new
+  p tobytime.message(params[:text])
+  redirect '/users/1'
+end
+
+post '/orders/form' do
+  tobytime = Party.new
   p tobytime.send_form
-  # p tobytime.message(params[:text])
   redirect '/users/1'
 end
 
