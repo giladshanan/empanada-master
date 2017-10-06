@@ -7,7 +7,6 @@ require 'bundler/setup' if File.exists?(ENV['BUNDLE_GEMFILE'])
 
 # Require gems we care about
 require 'rubygems'
-
 require 'dotenv/load'
 require 'oauth2'
 
@@ -22,6 +21,7 @@ require 'sinatra'
 require "sinatra/reloader" if development?
 
 require 'bcrypt'
+require 'httparty'
 
 require 'erb'
 
@@ -45,6 +45,7 @@ end
 # Set up the controllers and helpers
 Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }
 Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
+Dir[APP_ROOT.join('app', 'services', '*.rb')].each { |file| require file }
 
 # Set up the database and models
 require APP_ROOT.join('config', 'database')

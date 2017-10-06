@@ -13,6 +13,12 @@ get "/orders/new" do
   erb :"orders/new"
 end
 
+post '/orders/notification' do
+  tobytime = Party.new
+  p tobytime.message(params[:text])
+  redirect '/users/1'
+end
+
 post "/orders" do
   @empanadas = []
   @empanadas << OrderedEmpanada.create(empanada_type_id: 1, quantity: params[:beef])

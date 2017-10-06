@@ -17,7 +17,7 @@ gem 'activerecord'
 gem 'rake'
 
 gem 'shotgun'
-
+gem 'httparty'
 gem 'bcrypt'
 
 group :test do
