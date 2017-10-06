@@ -15,11 +15,13 @@ end
 
 post '/orders/notification' do
   tobytime = Party.new
-  p tobytime.message(params[:text])
+  p tobytime.send_form
+  # p tobytime.message(params[:text])
   redirect '/users/1'
 end
 
 post "/orders" do
+  p params
   @empanadas = []
   @empanadas << OrderedEmpanada.create(empanada_type_id: 1, quantity: params[:beef])
   @empanadas << OrderedEmpanada.create(empanada_type_id: 2, quantity: params[:malbec_beef])
@@ -27,7 +29,13 @@ post "/orders" do
   @empanadas << OrderedEmpanada.create(empanada_type_id: 4, quantity: params[:corn])
   @empanadas << OrderedEmpanada.create(empanada_type_id: 5, quantity: params[:nutella])
 
-  @order = Order.new(eater: current_user, ordered_empanadas: @empanadas, paid: false, payment_type: params[:payment_type], delivery_date: params[:date].to_date)
+  if params[:date]
+    delivery_date = params[:date].to_date
+  else
+    delivery_date ="October 13"
+  end
+
+  @order = Order.new(eater: current_user, ordered_empanadas: @empanadas, paid: false, payment_type: params[:payment_type], delivery_date: delivery_date)
   @order.save
   redirect "/users/#{current_user.id}"
 end
