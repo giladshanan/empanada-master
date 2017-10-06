@@ -21,7 +21,7 @@
 <div class="orders">
   <% @user.orders.each do |order|%>
   <h3><%= order.delivery_date %></h3>
-  <p>Total cost: <%= order.total %></p>
+  <p>Total cost: $<%= order.total %></p>
   <% if order.paid %>
   <p>PAID with <%= order.payment_type %></p>
   <% else %>
