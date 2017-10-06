@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 ruby '~>2.4.1'
+gem 'dotenv'
 # PostgreSQL driver
 gem 'pg'
 
@@ -13,7 +14,7 @@ gem 'activerecord'
 gem 'rake'
 
 gem 'shotgun'
-
+gem 'httparty'
 gem 'bcrypt'
 
 group :test do
