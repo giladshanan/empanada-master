@@ -8,6 +8,13 @@
     <button>Empanada Master Stats</button>
   </form>
 </div>
+
+<div class="block toby-stuff">
+  <form method='post' action='/orders/notification'>
+    <label class="block" for='message'>Enter a message for the people, Toby:<textarea rows="5" cols="30" class="block" name='text'></textarea></label>
+    <input type="submit" value="Send it!">
+  </form>
+</div>
 <% end %>
 
 <% if @user.orders.any? %>

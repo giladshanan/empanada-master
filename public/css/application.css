@@ -8,6 +8,14 @@ body {
   margin: 20px;
 }
 
+.block {
+  display: block;
+}
+
+.toby-stuff {
+  padding-top: 15px;
+}
+
 nav {
   display: flex;
   align-items: center;
@@ -26,13 +34,13 @@ nav li {
 }
 
 .button {
-  background:none!important;
-  border:none;
-  padding:0!important;
+  background: none !important;
+  border: none;
+  padding: 0 !important;
 
   /*optional*/
-  font-family:arial,sans-serif; /*input has OS specific font-family*/
-  color:#069;
-  text-decoration:underline;
-  cursor:pointer;
+  font-family: arial, sans-serif; /*input has OS specific font-family*/
+  color: #069;
+  text-decoration: underline;
+  cursor: pointer;
 }
