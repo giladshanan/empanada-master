@@ -1,5 +1,5 @@
 get "/orders" do
-  @orders = Order.all.order("delivery_date")
+  @orders = Order.order("delivery_date")
   erb :"orders/index"
 end
 
