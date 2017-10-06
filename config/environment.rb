@@ -8,6 +8,7 @@ require 'bundler/setup' if File.exists?(ENV['BUNDLE_GEMFILE'])
 # Require gems we care about
 require 'rubygems'
 require 'dotenv/load'
+require 'oauth2'
 
 require 'uri'
 require 'pathname'
